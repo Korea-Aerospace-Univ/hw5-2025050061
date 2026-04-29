@@ -3,7 +3,7 @@
 int main(void)
 {
     int N;
-    int x=0, y=0, z=0;
+    bool found = false;
     
     scanf("%d", &N);
     
@@ -13,14 +13,14 @@ int main(void)
             for(int k=1; k<=N/200; k++) {
                 if (N-900*i-750*j-200*k == 0) {
                     if (k<i || k<j) {
-                        x = i; y = j; z=k;
-                        printf("%d %d %d\n", x, y, z);
+                        printf("%d %d %d\n", i, j, k);
+                        found = true;
                     }
                 }
             }
         }
     }
-    if (!x) 
+    if (!found) 
         printf("none");
         
     return 0;
